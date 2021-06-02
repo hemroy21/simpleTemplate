@@ -1,0 +1,28 @@
+{# this is a viewer for homepage#}
+{% extends www/layout/layout.html %}
+{% block title %}{{$title}}{% endblock %}
+{% block content %}
+<p>Welcome to the home page.</p>
+<p>This is a test page for test purpose.</p>
+<ul>
+    {# this code compiled using the compilePHP function #}
+    {% foreach($colors as $color): %}
+        {# this double quoted $color is compiled by compileEchos function #}
+        <li>{{$color}}</li>
+    {% endforeach; %}
+</ul>
+{# Random images from https://picsum.photos #}
+<div>
+    {# Uncomment below when goes for production
+    <img id="picsum" src="https://picsum.photos/200/200" alt="picsum photos" onclick="loadpic();">
+    uncomment above when goes for production #}
+    {# comment or delete below when goes for production #}
+    <img id="picsum" src="./../www/static/img/{{ rand(1,12); }}.jpg" alt="Some random picsum images" onclick="loadpic();">
+    {# comment or delete above when goes for production #}
+</div>
+<script>
+    async function loadpic(){
+       document.getElementById('picsum').src='./../www/static/img/'+Math.floor((Math.random() * 12) + 1)+'.jpg';
+    }
+</script>
+{% endblock %}

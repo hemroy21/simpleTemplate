@@ -1,0 +1,74 @@
+{# this is model with which all the viewers will get viewable output #}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {# Uncomment it when goes for production 
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+    #}
+    {# Commenting or delete below when goes for production #}
+        <link rel="stylesheet" href="./../www/static/css/water.css">
+    {# Commenting or delete above when goes for production #}
+    <style>
+        .header {
+            top: 0px;
+            overflow: hidden;
+            background-color: #f1f1f1;
+            padding: 20px 10px;
+            border-radius: 0.5em;
+        }
+        
+        .header a{
+            float: left;
+            color: black;
+            text-align: center;
+            padding: 12px;
+            font-size: 18px; 
+            line-height: 25px;
+            border-radius: 4px;
+        }
+        a#header-logo{
+            text-decoration: none;
+            font-size: 2.2em;
+            pointer-events: none;
+        }
+        #nav {
+            float: right;
+        }
+        img#picsum {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 0.5em;
+            /* width: 50%; */
+        }
+        img#picsum:hover{
+            cursor:pointer;
+            box-shadow: 0 10px 10px 0 rgba(96, 89, 194, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            transition: 0.4s;
+        }
+
+        @media(prefers-color-scheme: dark){
+            img#picsum:hover{
+            cursor:pointer;
+            box-shadow: 0 10px 8px 0px rgba(187, 185, 206, 0.2), 0 6px 20px 0 rgba(151, 120, 120, 0.19);
+            transition: 0.4s;
+        }   
+        }
+    </style>
+    <title>{% yield title %}</title>
+</head>
+<body>
+    <div class="header">
+        <a href="#" id="header-logo">{% yield title %}</a>
+        <div id="nav">
+            <a href="./../">Home</a> 
+            <a href="./../contact.php">Contact us</a> 
+            <a href="./../about.php">About us</a>
+        </div>
+    </div>
+    {% yield content %}
+</body>
+</html>

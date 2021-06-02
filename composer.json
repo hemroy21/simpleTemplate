@@ -1,0 +1,24 @@
+{
+ "name":"hemroy/simpletemplate",
+ "type": "php-template",
+  "description": "php template engine from codeshack.io, by David Adams",
+  "keywords": ["php", "template", "php template engine"],
+  "license":"MIT",
+  "authors": [
+    {
+    "name": "Hem Roy",
+    "email": "roy.hem@rediff.com"
+    }
+  ],
+
+  "require": {
+      "php": ">=7.0.11",
+      "ext-mbstring": "*"
+  },
+
+  "autoload": {
+    "psr-4": {
+      "simpletemplate\\": "src/"
+    }
+  }
+}
